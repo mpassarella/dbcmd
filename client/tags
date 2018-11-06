@@ -1,0 +1,25 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+App	src/main/java/it/passarella/dbcmd/main/App.java	/^public class App {$/;"	c
+AppTest	src/test/java/it/passarella/dbcmd/AppTest.java	/^    public AppTest( String testName )$/;"	m	class:AppTest
+AppTest	src/test/java/it/passarella/dbcmd/AppTest.java	/^public class AppTest $/;"	c
+ConnectionFactory	src/main/java/it/passarella/dbcmd/integration/ConnectionFactory.java	/^public class ConnectionFactory {$/;"	c
+SQLManager	src/main/java/it/passarella/dbcmd/integration/SQLManager.java	/^    public SQLManager(Connection conn) {$/;"	m	class:SQLManager
+SQLManager	src/main/java/it/passarella/dbcmd/integration/SQLManager.java	/^public class SQLManager {$/;"	c
+columns	src/main/java/it/passarella/dbcmd/integration/SQLManager.java	/^    private List<String> columns = new ArrayList<>();$/;"	f	class:SQLManager	file:
+conn	src/main/java/it/passarella/dbcmd/integration/SQLManager.java	/^    private Connection conn;$/;"	f	class:SQLManager	file:
+create	src/main/java/it/passarella/dbcmd/integration/ConnectionFactory.java	/^    public static Connection create(String host, String username, String password) throws SQLException {$/;"	m	class:ConnectionFactory
+execute	src/main/java/it/passarella/dbcmd/integration/SQLManager.java	/^    public void execute(String sql) {$/;"	m	class:SQLManager
+executeQuery	src/main/java/it/passarella/dbcmd/integration/SQLManager.java	/^    private ResultSet executeQuery(String sql) {$/;"	m	class:SQLManager	file:
+it.passarella.dbcmd	src/test/java/it/passarella/dbcmd/AppTest.java	/^package it.passarella.dbcmd;$/;"	p
+it.passarella.dbcmd.integration	src/main/java/it/passarella/dbcmd/integration/ConnectionFactory.java	/^package it.passarella.dbcmd.integration; $/;"	p
+it.passarella.dbcmd.integration	src/main/java/it/passarella/dbcmd/integration/SQLManager.java	/^package it.passarella.dbcmd.integration;$/;"	p
+it.passarella.dbcmd.main	src/main/java/it/passarella/dbcmd/main/App.java	/^package it.passarella.dbcmd.main;$/;"	p
+main	src/main/java/it/passarella/dbcmd/main/App.java	/^    public static void main( String[] args ) { $/;"	m	class:App
+suite	src/test/java/it/passarella/dbcmd/AppTest.java	/^    public static Test suite()$/;"	m	class:AppTest
+testApp	src/test/java/it/passarella/dbcmd/AppTest.java	/^    public void testApp()$/;"	m	class:AppTest
+usage	src/main/java/it/passarella/dbcmd/main/App.java	/^    public static void usage() {$/;"	m	class:App
