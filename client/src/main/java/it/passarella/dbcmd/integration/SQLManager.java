@@ -13,6 +13,11 @@ public class SQLManager {
     private Connection conn;
     private OutputManager output;
 
+	public SQLManager(String host, String username, String password, PrintStream out) {
+	
+        this(ConnectionFactory.create(host, username, password), out);
+	}
+
     public SQLManager(Connection conn, PrintStream out) {
 
         this.conn = conn;

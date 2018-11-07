@@ -1,51 +1,31 @@
 package it.passarella.dbcmd.main;
 
-import java.sql.Connection;
-import java.sql.SQLException;
 import java.util.Scanner;
-
-import it.passarella.dbcmd.integration.ConnectionFactory;
-import it.passarella.dbcmd.integration.SQLManager;
 
 public class App {
 
     public static void main( String[] args ) { 
 
-        StringBuilder sql = new StringBuilder("");
+        StringBuilder command = new StringBuilder("");
         Scanner input = null;
 
-        Connection conn = null;
-        SQLManager manager = null;
-
+        CommandDispatcher cd = null;
+        
         boolean finished = false;
      
         if(args.length == 3) {
             
-            try {
+            cd = CommandDispatcher.getInstance(args[0], args[1], args[2], System.out); 
+            input = new Scanner(System.in);
+            
+            while(!finished) {
 
-                conn = ConnectionFactory.create(args[0], args[1], args[2]);
-                manager = new SQLManager(conn, System.out);
-                input = new Scanner(System.in);
+                System.out.print("SQL>");
+                command.append(input.nextLine());
                 
-                while(!finished) {
-
-                    System.out.print("SQL>");
-                    sql.append(input.nextLine());
-                    
-                    if(sql.toString().contains(";")){
-                        
-                        manager.execute(sql.toString().replaceAll(";", ""));
-                        
-                        sql = new StringBuilder("");
-
-                    } else if(sql.toString().equalsIgnoreCase("quit")){
-                        
-                        finished = true;
-                    }  
-                }
-            } catch(SQLException ex) {
+                finished = cd.manage(command.toString());
                 
-                ex.printStackTrace();
+                command = new StringBuilder("");
             }
             
         } else {
