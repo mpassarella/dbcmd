@@ -17,6 +17,17 @@ public class OutputManager {
         this.columns = new ArrayList<>();
     }
 
+    public void printTableList(List<String> tables) {
+
+
+        for(String table : tables) {
+
+            this.out.println(table);
+        }
+
+        this.out.println("**********************************************************************************************");
+    }
+
     public void printResultSet(ResultSet result) {
 
         this.columns.clear();
@@ -31,11 +42,9 @@ public class OutputManager {
 
             while(result.next()) {
             
-                this.out.println("**********************************************************************************************");
 
                 for(String column : this.columns) {
                     
-                    this.out.println("----------------------------------------------------------------------------------------------");
                     this.out.println(column + " : " + result.getString(column));
                     this.out.println("----------------------------------------------------------------------------------------------");
                 }
