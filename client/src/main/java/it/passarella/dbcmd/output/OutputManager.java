@@ -17,12 +17,21 @@ public class OutputManager {
         this.columns = new ArrayList<>();
     }
 
-    public void printTableList(List<String> tables) {
+    public void printHistory(List<String> list) {
 
+        for(int i=0; i < list.size(); i++) {
 
-        for(String table : tables) {
+            this.out.println("[" + i + "] - " + list.get(i));
+        }
 
-            this.out.println(table);
+        this.out.println("**********************************************************************************************");
+    }
+
+    public void printList(List<String> list) {
+
+        for(String item : list) {
+
+            this.out.println(item);
         }
 
         this.out.println("**********************************************************************************************");

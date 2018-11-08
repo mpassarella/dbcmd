@@ -8,24 +8,19 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
-import it.passarella.dbcmd.output.OutputManager;
-
 public class SQLManager {
 
     private Connection conn;
-    private OutputManager output;
     private List<String> tables;
 
-	public SQLManager(String host, String username, String password, PrintStream out) {
+	public SQLManager(String host, String username, String password) {
 	
-        this(ConnectionFactory.create(host, username, password), out);
+        this(ConnectionFactory.create(host, username, password));
 	}
 
-    public SQLManager(Connection conn, PrintStream out) {
+    public SQLManager(Connection conn) {
 
         this.conn = conn;
-        this.output = new OutputManager(out);
-        
         this.tables = new ArrayList<String>();
     }
 
@@ -73,7 +68,7 @@ public class SQLManager {
         }
     }
 
-    private ResultSet executeQuery(String sql) {
+    public ResultSet executeQuery(String sql) {
 
         ResultSet result = null; 
 
@@ -91,21 +86,10 @@ public class SQLManager {
         return result;
     }  
 
-    public void execute(String sql) {
-        
-        ResultSet result = null; 
-
-        result = this.executeQuery(sql);
-
-        if(result != null) {        
-
-            this.output.printResultSet(result);
-        }
-    } 
-
-    public void showTables(String tablePattern) {
+    public List<String> showTables(String tablePattern) {
         
         this.loadTables(tablePattern);
-        this.output.printTableList(this.tables);
+        
+        return this.tables;
     }
 }
