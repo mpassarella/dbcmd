@@ -24,6 +24,23 @@ public class SQLManager {
         this.tables = new ArrayList<String>();
     }
 
+    public void changeCatalog(String catalog) {
+    
+        if(this.conn != null) {
+            
+            try { 
+
+                this.conn.setCatalog(catalog);
+
+            } catch(SQLException ex) {
+            
+                ex.printStackTrace();
+            }
+        }
+        
+        this.loadTables(null);        
+    }
+
     public void changeSchema(String schema) {
     
         if(this.conn != null) {
@@ -91,5 +108,17 @@ public class SQLManager {
         this.loadTables(tablePattern);
         
         return this.tables;
+    }
+
+    public void closeConnection() {
+        
+        try {
+
+            this.conn.close();
+
+        } catch(SQLException ex) {
+        
+            ex.printStackTrace();
+        }
     }
 }

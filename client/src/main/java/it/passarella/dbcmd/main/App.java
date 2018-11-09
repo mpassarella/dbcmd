@@ -28,6 +28,21 @@ public class App {
                 command = new StringBuilder("");
             }
             
+        } else if(args.length == 1) {
+            
+            cd = CommandDispatcher.getInstance(args[0], System.out);            
+            input = new Scanner(System.in);
+
+            while(!finished) {
+
+                System.out.print("SQL>");
+                command.append(input.nextLine());
+                
+                finished = cd.manage(command.toString());
+                
+                command = new StringBuilder("");
+            }
+
         } else {
             
             usage();
@@ -38,5 +53,6 @@ public class App {
         
         System.out.println("DBCMD USAGE SHEET");
         System.out.println("java -jar dbcmd.jar connectionString username password");
+        System.out.println("java -jar dbcmd.jar propertyFile");
     }
 }

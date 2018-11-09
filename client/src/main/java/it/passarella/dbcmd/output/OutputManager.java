@@ -24,7 +24,7 @@ public class OutputManager {
             this.out.println("[" + i + "] - " + list.get(i));
         }
 
-        this.out.println("**********************************************************************************************");
+        this.out.println("-------");
     }
 
     public void printList(List<String> list) {
@@ -34,7 +34,7 @@ public class OutputManager {
             this.out.println(item);
         }
 
-        this.out.println("**********************************************************************************************");
+        this.out.println("-------");
     }
 
     public void printResultSet(ResultSet result) {

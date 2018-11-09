@@ -11,10 +11,17 @@ public class ConnectionFactory {
         Connection conn = null;
 
         try { 
+
+            if(host.contains("mysql")) {
+
+                Class.forName("com.mysql.cj.jdbc.Driver");
+            }
  
             conn = DriverManager.getConnection(host, username, password);
-        } catch (SQLException ex) {
-            
+
+        } catch (SQLException|ClassNotFoundException ex) {
+           
+            ex.printStackTrace(); 
             conn = null;
         }
 
