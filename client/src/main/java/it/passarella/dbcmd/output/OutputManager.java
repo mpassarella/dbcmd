@@ -63,6 +63,8 @@ public class OutputManager {
 
         } catch (SQLException ex) {
 
+        } catch (Exception ex) {
+        
         }
     } 
 }

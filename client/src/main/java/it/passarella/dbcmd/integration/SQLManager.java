@@ -1,6 +1,7 @@
 package it.passarella.dbcmd.integration;
 
 import java.io.PrintStream;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -102,6 +103,20 @@ public class SQLManager {
 
         return result;
     }  
+
+
+    public void executeCall(String sqlCode) {
+
+        try {
+
+            CallableStatement stmt = this.conn.prepareCall(sqlCode);
+            stmt.execute();
+            
+        } catch (SQLException ex) {
+            
+            ex.printStackTrace();
+        }
+    }
 
     public List<String> showTables(String tablePattern) {
         

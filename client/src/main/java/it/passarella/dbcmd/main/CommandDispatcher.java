@@ -32,6 +32,7 @@ public class CommandDispatcher {
         this.history = new ArrayList<String>();
         this.config = new AppConfig();
         this.config.loadProperties(propertyFile);
+        this.history = this.config.loadHistoryFromFile(this.config.getProperties().getProperty("cmdhistory.file"));
 	}
 
 	public static CommandDispatcher getInstance(String host, String username, String password, PrintStream out) {
@@ -85,6 +86,8 @@ public class CommandDispatcher {
         } else if(command.equalsIgnoreCase("quit")){
 
             finished = true;
+            this.config.saveHistoryToFile(this.config.getProperties().getProperty("cmdhistory.file"), this.history);
+            
         } else if(command.startsWith(":")){
 
             // SHOW TABLES
@@ -119,6 +122,9 @@ public class CommandDispatcher {
         } else if(command.startsWith("!")){
            
             this.execHistoryCommand(command.substring(1)); 
+        } else if(command.startsWith("@")){
+        
+            this.executeSQLScript(command.substring(1));
         }
 
         return finished;
@@ -167,5 +173,10 @@ public class CommandDispatcher {
         } catch(NumberFormatException ex) {
             
         }
+    }
+
+    private void executeSQLScript(String fileName) {
+        
+        this.manager.executeCall(this.config.loadFile(fileName));
     }
 }

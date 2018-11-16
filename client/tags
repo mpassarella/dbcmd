@@ -5,39 +5,61 @@
 !_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
 !_TAG_PROGRAM_VERSION	5.9~svn20110310	//
 App	src/main/java/it/passarella/dbcmd/main/App.java	/^public class App {$/;"	c
+AppConfig	src/main/java/it/passarella/dbcmd/config/AppConfig.java	/^    public AppConfig() {$/;"	m	class:AppConfig
+AppConfig	src/main/java/it/passarella/dbcmd/config/AppConfig.java	/^public class AppConfig {$/;"	c
 AppTest	src/test/java/it/passarella/dbcmd/AppTest.java	/^    public AppTest( String testName )$/;"	m	class:AppTest
 AppTest	src/test/java/it/passarella/dbcmd/AppTest.java	/^public class AppTest $/;"	c
 CommandDispatcher	src/main/java/it/passarella/dbcmd/main/CommandDispatcher.java	/^	private CommandDispatcher(String host, String username, String password, PrintStream out) {$/;"	m	class:CommandDispatcher	file:
+CommandDispatcher	src/main/java/it/passarella/dbcmd/main/CommandDispatcher.java	/^	private CommandDispatcher(String propertyFile, PrintStream out) {$/;"	m	class:CommandDispatcher	file:
 CommandDispatcher	src/main/java/it/passarella/dbcmd/main/CommandDispatcher.java	/^public class CommandDispatcher {$/;"	c
 ConnectionFactory	src/main/java/it/passarella/dbcmd/integration/ConnectionFactory.java	/^public class ConnectionFactory {$/;"	c
 OutputManager	src/main/java/it/passarella/dbcmd/output/OutputManager.java	/^    public OutputManager(PrintStream out) {$/;"	m	class:OutputManager
 OutputManager	src/main/java/it/passarella/dbcmd/output/OutputManager.java	/^public class OutputManager {$/;"	c
-SQLManager	src/main/java/it/passarella/dbcmd/integration/SQLManager.java	/^	public SQLManager(String host, String username, String password, PrintStream out) {$/;"	m	class:SQLManager
-SQLManager	src/main/java/it/passarella/dbcmd/integration/SQLManager.java	/^    public SQLManager(Connection conn, PrintStream out) {$/;"	m	class:SQLManager
+SQLManager	src/main/java/it/passarella/dbcmd/integration/SQLManager.java	/^	public SQLManager(String host, String username, String password) {$/;"	m	class:SQLManager
+SQLManager	src/main/java/it/passarella/dbcmd/integration/SQLManager.java	/^    public SQLManager(Connection conn) {$/;"	m	class:SQLManager
 SQLManager	src/main/java/it/passarella/dbcmd/integration/SQLManager.java	/^public class SQLManager {$/;"	c
 cd	src/main/java/it/passarella/dbcmd/main/CommandDispatcher.java	/^	private static CommandDispatcher cd = null;$/;"	f	class:CommandDispatcher	file:
+changeCatalog	src/main/java/it/passarella/dbcmd/integration/SQLManager.java	/^    public void changeCatalog(String catalog) {$/;"	m	class:SQLManager
+changeCatalog	src/main/java/it/passarella/dbcmd/main/CommandDispatcher.java	/^    private void changeCatalog(String command) {$/;"	m	class:CommandDispatcher	file:
+changeDBConnection	src/main/java/it/passarella/dbcmd/main/CommandDispatcher.java	/^    public void changeDBConnection(String command) {$/;"	m	class:CommandDispatcher
 changeSchema	src/main/java/it/passarella/dbcmd/integration/SQLManager.java	/^    public void changeSchema(String schema) {$/;"	m	class:SQLManager
+changeSchema	src/main/java/it/passarella/dbcmd/main/CommandDispatcher.java	/^    private void changeSchema(String command) {$/;"	m	class:CommandDispatcher	file:
+closeConnection	src/main/java/it/passarella/dbcmd/integration/SQLManager.java	/^    public void closeConnection() {$/;"	m	class:SQLManager
 columns	src/main/java/it/passarella/dbcmd/output/OutputManager.java	/^    private List<String> columns = null;$/;"	f	class:OutputManager	file:
+config	src/main/java/it/passarella/dbcmd/main/CommandDispatcher.java	/^    private AppConfig config = null;$/;"	f	class:CommandDispatcher	file:
 conn	src/main/java/it/passarella/dbcmd/integration/SQLManager.java	/^    private Connection conn;$/;"	f	class:SQLManager	file:
 create	src/main/java/it/passarella/dbcmd/integration/ConnectionFactory.java	/^    public static Connection create(String host, String username, String password) {$/;"	m	class:ConnectionFactory
-execute	src/main/java/it/passarella/dbcmd/integration/SQLManager.java	/^    public void execute(String sql) {$/;"	m	class:SQLManager
-executeQuery	src/main/java/it/passarella/dbcmd/integration/SQLManager.java	/^    private ResultSet executeQuery(String sql) {$/;"	m	class:SQLManager	file:
+execHistoryCommand	src/main/java/it/passarella/dbcmd/main/CommandDispatcher.java	/^    private void execHistoryCommand(String value) {$/;"	m	class:CommandDispatcher	file:
+executeQuery	src/main/java/it/passarella/dbcmd/integration/SQLManager.java	/^    public ResultSet executeQuery(String sql) {$/;"	m	class:SQLManager
 getInstance	src/main/java/it/passarella/dbcmd/main/CommandDispatcher.java	/^	public static CommandDispatcher getInstance(String host, String username, String password, PrintStream out) {$/;"	m	class:CommandDispatcher
+getInstance	src/main/java/it/passarella/dbcmd/main/CommandDispatcher.java	/^	public static CommandDispatcher getInstance(String propertyFile, PrintStream out) {$/;"	m	class:CommandDispatcher
+getProperties	src/main/java/it/passarella/dbcmd/config/AppConfig.java	/^    public Properties getProperties() {$/;"	m	class:AppConfig
+history	src/main/java/it/passarella/dbcmd/main/CommandDispatcher.java	/^    private List<String> history = null;$/;"	f	class:CommandDispatcher	file:
+input	src/main/java/it/passarella/dbcmd/config/AppConfig.java	/^    private BufferedReader input;$/;"	f	class:AppConfig	file:
 it.passarella.dbcmd	src/test/java/it/passarella/dbcmd/AppTest.java	/^package it.passarella.dbcmd;$/;"	p
+it.passarella.dbcmd.config	src/main/java/it/passarella/dbcmd/config/AppConfig.java	/^package it.passarella.dbcmd.config;$/;"	p
 it.passarella.dbcmd.integration	src/main/java/it/passarella/dbcmd/integration/ConnectionFactory.java	/^package it.passarella.dbcmd.integration; $/;"	p
 it.passarella.dbcmd.integration	src/main/java/it/passarella/dbcmd/integration/SQLManager.java	/^package it.passarella.dbcmd.integration;$/;"	p
 it.passarella.dbcmd.main	src/main/java/it/passarella/dbcmd/main/App.java	/^package it.passarella.dbcmd.main;$/;"	p
 it.passarella.dbcmd.main	src/main/java/it/passarella/dbcmd/main/CommandDispatcher.java	/^package it.passarella.dbcmd.main;$/;"	p
 it.passarella.dbcmd.output	src/main/java/it/passarella/dbcmd/output/OutputManager.java	/^package it.passarella.dbcmd.output;$/;"	p
+loadHistoryFromFile	src/main/java/it/passarella/dbcmd/config/AppConfig.java	/^    public List<String> loadHistoryFromFile(String filename) {$/;"	m	class:AppConfig
+loadProperties	src/main/java/it/passarella/dbcmd/config/AppConfig.java	/^    public void loadProperties(String propertyFile) {$/;"	m	class:AppConfig
 loadTables	src/main/java/it/passarella/dbcmd/integration/SQLManager.java	/^    private void loadTables(String tablePattern) {$/;"	m	class:SQLManager	file:
 main	src/main/java/it/passarella/dbcmd/main/App.java	/^    public static void main( String[] args ) { $/;"	m	class:App
 manage	src/main/java/it/passarella/dbcmd/main/CommandDispatcher.java	/^	public boolean manage(String command) {$/;"	m	class:CommandDispatcher
 manager	src/main/java/it/passarella/dbcmd/main/CommandDispatcher.java	/^	private SQLManager manager = null;$/;"	f	class:CommandDispatcher	file:
 out	src/main/java/it/passarella/dbcmd/output/OutputManager.java	/^    private PrintStream out;$/;"	f	class:OutputManager	file:
-output	src/main/java/it/passarella/dbcmd/integration/SQLManager.java	/^    private OutputManager output;$/;"	f	class:SQLManager	file:
+output	src/main/java/it/passarella/dbcmd/config/AppConfig.java	/^    private BufferedWriter output;$/;"	f	class:AppConfig	file:
+output	src/main/java/it/passarella/dbcmd/main/CommandDispatcher.java	/^    private OutputManager output = null;$/;"	f	class:CommandDispatcher	file:
+printHistory	src/main/java/it/passarella/dbcmd/output/OutputManager.java	/^    public void printHistory(List<String> list) {$/;"	m	class:OutputManager
+printList	src/main/java/it/passarella/dbcmd/output/OutputManager.java	/^    public void printList(List<String> list) {$/;"	m	class:OutputManager
 printResultSet	src/main/java/it/passarella/dbcmd/output/OutputManager.java	/^    public void printResultSet(ResultSet result) {$/;"	m	class:OutputManager
-printTableList	src/main/java/it/passarella/dbcmd/output/OutputManager.java	/^    public void printTableList(List<String> tables) {$/;"	m	class:OutputManager
-showTables	src/main/java/it/passarella/dbcmd/integration/SQLManager.java	/^    public void showTables(String tablePattern) {$/;"	m	class:SQLManager
+properties	src/main/java/it/passarella/dbcmd/config/AppConfig.java	/^    private Properties properties;$/;"	f	class:AppConfig	file:
+saveHistoryToFile	src/main/java/it/passarella/dbcmd/config/AppConfig.java	/^    public void saveHistoryToFile(String filename, List<String> history) {$/;"	m	class:AppConfig
+showHistory	src/main/java/it/passarella/dbcmd/main/CommandDispatcher.java	/^    private void showHistory() {$/;"	m	class:CommandDispatcher	file:
+showTables	src/main/java/it/passarella/dbcmd/integration/SQLManager.java	/^    public List<String> showTables(String tablePattern) {$/;"	m	class:SQLManager
+showTables	src/main/java/it/passarella/dbcmd/main/CommandDispatcher.java	/^    private void showTables(String command) {$/;"	m	class:CommandDispatcher	file:
 suite	src/test/java/it/passarella/dbcmd/AppTest.java	/^    public static Test suite()$/;"	m	class:AppTest
 tables	src/main/java/it/passarella/dbcmd/integration/SQLManager.java	/^    private List<String> tables;$/;"	f	class:SQLManager	file:
 testApp	src/test/java/it/passarella/dbcmd/AppTest.java	/^    public void testApp()$/;"	m	class:AppTest
