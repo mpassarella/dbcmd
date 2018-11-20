@@ -5,6 +5,8 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
@@ -77,22 +79,9 @@ public class AppConfig {
         List<String> list = new ArrayList<String>();
     
         try {
-        
-            this.input = new BufferedReader(new FileReader(filename));
-            
-            if(this.input != null) {
-        
-                String line = this.input.readLine();
-
-                while(line != null) {
-                    
-                    list.add(line);
-                    line = this.input.readLine();
-                } 
-
-                this.input.close();
-            }
-
+    
+            Files.lines(Paths.get(filename)).forEach(i -> list.add(i));
+       
         } catch(IOException ex) {
 
             ex.printStackTrace();

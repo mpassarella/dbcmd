@@ -12,26 +12,21 @@ public class App {
         CommandDispatcher cd = null;
         
         boolean finished = false;
-     
-        if(args.length == 3) {
-            
-            cd = CommandDispatcher.getInstance(args[0], args[1], args[2], System.out); 
-            input = new Scanner(System.in);
-            
-            while(!finished) {
 
-                System.out.print("SQL>");
-                command.append(input.nextLine());
+
+        if(args.length > 0) {
+
+
+            if(args.length == 3) {
                 
-                finished = cd.manage(command.toString());
+                cd = CommandDispatcher.getInstance(args[0], args[1], args[2], System.out); 
+                input = new Scanner(System.in);
                 
-                command = new StringBuilder("");
-            }
-            
-        } else if(args.length == 1) {
-            
-            cd = CommandDispatcher.getInstance(args[0], System.out);            
-            input = new Scanner(System.in);
+            } else if(args.length == 1) {
+                
+                cd = CommandDispatcher.getInstance(args[0], System.out);            
+                input = new Scanner(System.in);
+            } 
 
             while(!finished) {
 
@@ -42,9 +37,8 @@ public class App {
                 
                 command = new StringBuilder("");
             }
-
         } else {
-            
+
             usage();
         }
     }
