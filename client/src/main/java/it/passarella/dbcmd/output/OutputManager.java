@@ -29,10 +29,8 @@ public class OutputManager {
 
     public void printList(List<String> list) {
 
-        for(String item : list) {
-
-            this.out.println(item);
-        }
+        list.stream()
+            .forEach(x -> this.out.println(x));
 
         this.out.println("-------");
     }

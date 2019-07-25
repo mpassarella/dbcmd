@@ -30,7 +30,9 @@ config	src/main/java/it/passarella/dbcmd/main/CommandDispatcher.java	/^    priva
 conn	src/main/java/it/passarella/dbcmd/integration/SQLManager.java	/^    private Connection conn;$/;"	f	class:SQLManager	file:
 create	src/main/java/it/passarella/dbcmd/integration/ConnectionFactory.java	/^    public static Connection create(String host, String username, String password) {$/;"	m	class:ConnectionFactory
 execHistoryCommand	src/main/java/it/passarella/dbcmd/main/CommandDispatcher.java	/^    private void execHistoryCommand(String value) {$/;"	m	class:CommandDispatcher	file:
+executeCall	src/main/java/it/passarella/dbcmd/integration/SQLManager.java	/^    public void executeCall(String sqlCode) {$/;"	m	class:SQLManager
 executeQuery	src/main/java/it/passarella/dbcmd/integration/SQLManager.java	/^    public ResultSet executeQuery(String sql) {$/;"	m	class:SQLManager
+executeSQLScript	src/main/java/it/passarella/dbcmd/main/CommandDispatcher.java	/^    private void executeSQLScript(String fileName) {$/;"	m	class:CommandDispatcher	file:
 getInstance	src/main/java/it/passarella/dbcmd/main/CommandDispatcher.java	/^	public static CommandDispatcher getInstance(String host, String username, String password, PrintStream out) {$/;"	m	class:CommandDispatcher
 getInstance	src/main/java/it/passarella/dbcmd/main/CommandDispatcher.java	/^	public static CommandDispatcher getInstance(String propertyFile, PrintStream out) {$/;"	m	class:CommandDispatcher
 getProperties	src/main/java/it/passarella/dbcmd/config/AppConfig.java	/^    public Properties getProperties() {$/;"	m	class:AppConfig
@@ -43,6 +45,7 @@ it.passarella.dbcmd.integration	src/main/java/it/passarella/dbcmd/integration/SQ
 it.passarella.dbcmd.main	src/main/java/it/passarella/dbcmd/main/App.java	/^package it.passarella.dbcmd.main;$/;"	p
 it.passarella.dbcmd.main	src/main/java/it/passarella/dbcmd/main/CommandDispatcher.java	/^package it.passarella.dbcmd.main;$/;"	p
 it.passarella.dbcmd.output	src/main/java/it/passarella/dbcmd/output/OutputManager.java	/^package it.passarella.dbcmd.output;$/;"	p
+loadFile	src/main/java/it/passarella/dbcmd/config/AppConfig.java	/^    public String loadFile(String filename) {$/;"	m	class:AppConfig
 loadHistoryFromFile	src/main/java/it/passarella/dbcmd/config/AppConfig.java	/^    public List<String> loadHistoryFromFile(String filename) {$/;"	m	class:AppConfig
 loadProperties	src/main/java/it/passarella/dbcmd/config/AppConfig.java	/^    public void loadProperties(String propertyFile) {$/;"	m	class:AppConfig
 loadTables	src/main/java/it/passarella/dbcmd/integration/SQLManager.java	/^    private void loadTables(String tablePattern) {$/;"	m	class:SQLManager	file:

@@ -5,11 +5,14 @@ import java.io.BufferedWriter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
+
+import java.nio.file.Files;
+import java.nio.file.Paths;
+import java.util.stream.Collector;
+import java.util.stream.Collectors;
 
 
 public class AppConfig {
@@ -76,11 +79,12 @@ public class AppConfig {
 
     public List<String> loadHistoryFromFile(String filename) {
 
-        List<String> list = new ArrayList<String>();
+        List<String> list = null;
     
         try {
     
-            Files.lines(Paths.get(filename)).forEach(i -> list.add(i));
+            list = Files.lines(Paths.get(filename))
+                .collect(Collectors.toList());
        
         } catch(IOException ex) {
 
@@ -97,27 +101,7 @@ public class AppConfig {
     
         try {
         
-            this.output = new BufferedWriter(new FileWriter(filename));
-            
-            if(this.output != null) {
-        
-                history.stream()
-                      .distinct()
-                      .filter(i -> !i.startsWith("!"))
-                      .forEach( i -> { 
-                        try {
-
-                            this.output.write(i + "\r\n");
-
-                        } catch(Exception e) {
-        
-                            e.printStackTrace(); 
-                        } 
-                    }
-                );
-                this.output.flush();
-                this.output.close();
-            }
+            Files.write(Paths.get(filename), history);
 
         } catch(IOException ex) {
 
