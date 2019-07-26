@@ -14,6 +14,9 @@ import java.nio.file.Paths;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 
+/*
+JUST A QUICK ONE
+*/
 
 public class AppConfig {
 
