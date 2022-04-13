@@ -4,7 +4,7 @@
   <artifactId>client</artifactId>
   <packaging>jar</packaging>
   <version>1.0</version>
-  <name>client</name>
+  <name>dbcmd</name>
   <url>http://maven.apache.org</url>
   <build>
     <plugins>
@@ -29,12 +29,13 @@
             <configuration>
               <archive>
                 <manifest>
-                  <mainClass>it.passarella.dbcmd.main.App </mainClass>
+                  <mainClass>it.passarella.dbcmd.main.App</mainClass>
                 </manifest>
               </archive>
               <descriptorRefs>
                 <descriptorRef>jar-with-dependencies</descriptorRef>
               </descriptorRefs>
+              <finalName>${project.build.finalName}</finalName>
             </configuration>
           </execution>
         </executions>
@@ -45,19 +46,18 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>3.8.1</version>
+      <version>4.11</version>
       <scope>test</scope>
     </dependency>
-    <!-- https://mvnrepository.com/artifact/com.oracle/ojdbc6 -->
     <dependency>
-        <groupId>com.oracle</groupId>
-        <artifactId>ojdbc7</artifactId>
-        <version>12.1.0.2</version>
+      <groupId>com.oracle.database.jdbc</groupId>
+      <artifactId>ojdbc8</artifactId>
+      <version>21.1.0.0</version>
     </dependency>
     <dependency>
-        <groupId>mysql</groupId>
-        <artifactId>mysql-connector-java</artifactId>
-        <version>8.0.13</version>
+      <groupId>mysql</groupId>
+      <artifactId>mysql-connector-java</artifactId>
+      <version>8.0.13</version>
     </dependency>
   </dependencies>
 </project>
